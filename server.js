@@ -2,42 +2,47 @@ const express = require('express')
 const app = express()
 const PORT = 3000
 
-const posts = [
+
+
+app.get('/', (req, res) => {
+    res.send(`Server del mio blog`)
+})
+
+app.get('/bacheca', (req, res) => {
+    const posts = [
     {
         titolo: 'Ciambellone',
         contenuto: '',
         immagine: '',
-        tags: ''
+        tags: []
     },
     {
         titolo: 'Cracker barbabietola',
         contenuto: '',
         immagine: '',
-        tags: ''
+        tags: []
     },
     {
         titolo: 'Pane fritto dolce',
         contenuto: '',
         immagine: '',
-        tags: ''
+        tags: []
     },
     {
         titolo: 'Pasta barbabietola',
         contenuto: '',
         immagine: '',
-        tags: ''
+        tags: []
     },
     {
         titolo: 'Torta paesana',
         contenuto: '',
         immagine: '',
-        tags: ''
-    },
-
+        tags: []
+    }
 ]
 
-app.get('/', (req, res) => {
-    res.send(`Server del mio blog`)
+    res.json(posts)
 })
 
 app
